@@ -1,0 +1,112 @@
+section{
+    position: relative;
+    width: 95%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 550px;
+    padding: 0 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: #333 0.1px 0.1px 5px;
+}
+
+section h1{
+    color: #0a4e92;
+    font-size: 25px;
+}
+.container{
+    display: flex;
+    position: relative;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.container .main-images{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.main-images img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container .info-supples{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+
+}
+.info-supples .others-images{
+    display: flex;
+    position: relative;
+    gap: 5%;
+}
+.others-images img{
+    position: relative;
+    width: 30%;
+}
+.specification{
+    display: flex;
+    gap: 5%;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    color: #041c35;
+}
+.specification span{
+    color: #FFA500;
+}
+.container p{
+    position: relative;
+    width: 100%;
+    margin: 20px;
+    text-align: justify;
+    font-size: 20px;
+    margin-top: 40px;
+    color: #041c35;
+}
+
+.stars-box{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: #FFD500;
+}
+.stars-box i{
+    padding: 5px;
+}
+
+.stars-box .price{
+    margin-left: 100px;
+    font-weight: 500;
+}
+
+.container button{
+    display: inline-block;
+    border: 2px solid #FFD700;
+    color: #333;
+    background-color: #FFD700;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    width: 50%;
+    margin-left: 5%;
+    font-size: 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.container button:hover{
+    border: 2px solid #FFA500;
+    background-color: #FFA500;
+}
