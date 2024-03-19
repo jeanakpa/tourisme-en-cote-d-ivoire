@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="attribuer-guide.css">
+  <title>Attribuer un guide</title>
+</head>
+<body>
+  <section>
+    <div class="header">
+      <h1>Dashbord administration</h1>
+    </div>
+
+    <div class="navigation">
+      <div class="profil">
+        <img src="../img/téléchargement.jpg" alt="">
+        <h2>Mister John</h2>
+      </div>
+      <div class="nav">
+        <a href="../accueil.html">Deconnexion</a>
+        <div class="buttons">
+          <button onclick="window.location.href='profil.html'">Mon profil</button>
+          <button onclick="window.location.href='reservation.html'">Reservations</button>
+          <button onclick="window.location.href='guide.html'">Guides</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main attribution-block">
+      <h2>Attribuer un guide</h2>
+      <hr>
+
+      <h3>Détails de la réservation</h3>
+      <ul>
+        <li>N°: <span id="reservationId"></span></li>
+        <li>Site touristique: <span id="reservationSite"></span></li>
+        <li>Nom visiteur: <span id="reservationVisitor"></span></li>
+        <li>Date: <span id="reservationDate"></span></li>
+        <li>Ville: <span id="reservationCity"></span></li>
+        <li>Heure: <span id="reservationTime"></span></li>
+        <li>Prix: <span id="reservationPrice"></span></li>
+        <li>Statut: <span id="reservationStatus"></span></li>
+      </ul>
+
+      <h3>Choix du guide</h3>
+      <form id="assignGuideForm" method="post" action="assign-guide.php">  <select id="guidesList" name="selectedGuideId">
+        </select>
+        <button type="submit">Attribuer ce guide</button>
+      </form>
+
+      <script>
+        // Access reservation details from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const reservationId = urlParams.get('reservationId');
+        const reservationSite = urlParams.get('reservationSite');
+        const reservationVisitor = urlParams.get('reservationVisitor');
+        const reservationDate = urlParams.get('reservationDate');
+        const reservationCity = urlParams.get('reservationCity');
+        const reservationTime = urlParams.get('reservationTime');
+        const reservationPrice = urlParams.get('reservationPrice');
+        const reservationStatus = urlParams.get('reservationStatus');
+
+        // Populate reservation details
+        document.getElementById('reservationId').textContent = reservationId;
+        document.getElementById('reservationSite').textContent = reservationSite;
+        document.getElementById('reservationVisitor').textContent = reservationVisitor;
+        document.getElementById('reservationDate').textContent = reservationDate;
+        document.getElementById('reservationCity').textContent = reservationCity;
+        document.getElementById('reservationTime').textContent = reservationTime;
+        document.getElementById('reservationPrice').textContent = reservationPrice;
+        document.getElementById('reservationStatus').textContent = reservationStatus;
+
+        // Fetch available guides (replace with your logic to fetch guide data)
+        const guides = [
+          { id: 1, name: "Pierre Tourguide" },
+          { id: 2, name: "Jeanne Guide" },
+          { id: 3, name: "Pierre Tourguide" },
+          { id: 4, name: "Jeanne Guide" },
+          { id: 5, name: "Pierre Tourguide" },
+          { id: 6, name: "Jeanne Guide" },
+        ];
+
+        // Populate guides list
+        const guidesList = document.getElementById('guidesList');
+        guides.forEach(guide => {
+          const option = document.createElement('option');
+          option.value = guide.id;
+          option.textContent = guide.name;
+          guidesList.appendChild(option);
+        });
+      </script>
+    </div>
+  </section>
+</body>
+</html>

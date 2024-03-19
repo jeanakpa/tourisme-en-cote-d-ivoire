@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Tourisme en Côte d'Ivoire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+    <header>
+        <h1>Ivoire Tourisme</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="destination.html">Destinations</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="historique.html">Historique</a></li>
+                <li><a href="accueil.html#services">Services</a></li>
+                <li><a href="connexion.html" class="login">Se connecter<i class="fa-solid fa-chevron-down"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="connexion-form">
+            <h2>Connexion administrateur</h2>
+
+            <form action="enregistre-visiteur.php" method="post">
+                
+                
+                <div class="input-group">
+                    <label for="email-connexion-admin">Email</label>
+                    <input type="email" id="email-connexion-admin" name="email-connexion-admin" placeholder="Entrez votre email">
+                </div>
+                <div class="input-group">
+                    <label for="email-connexion-admin">Mot de passe</label>
+                    <input type="password" id="pwd-connexion-admin" name="pwd-connexion-admin" placeholder="Entrez votre mot de passe">
+                </div>
+                
+                
+                <button type="submit">Se connecter</button>
+                
+            </form>
+
+            <div class="links">
+                <a href="admin-inscription.html">Pas de compte ? S'inscrire</a>
+                <a href="inscription.html">S'inscire en tant que visiteur</a>
+                <a href="connexion.html">se connecter en tant que visiteur</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tourisme en Côte d'Ivoire</p>
+    </footer>
+    <script>
+        const inputAvatar = document.getElementById('avatar');
+        const fileImport = document.querySelector('.file-import');
+    
+        inputAvatar.addEventListener('change', function() {
+            const file = this.files[0];
+    
+            if (file) {
+                const reader = new FileReader();
+    
+                reader.addEventListener('load', function() {
+                    fileImport.innerHTML = `<img src="${this.result}" alt="Aperçu de l'avatar">`;
+                });
+    
+                reader.readAsDataURL(file);
+            } else {
+                fileImport.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>

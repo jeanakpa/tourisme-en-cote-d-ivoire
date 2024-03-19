@@ -26,6 +26,7 @@
     box-shadow: #333 0.1px 0.1px 5px;
     width:340px;
     height: auto;
+    background-color: #fff;
 }
 .box-articles h2{
     text-align: center;

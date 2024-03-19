@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="profil.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <section>
+    <div class="header">
+      <h1>Dashbord administration</h1>
+    </div>
+
+    <div class="navigation">
+      <div class="profil">
+        <img src="../img/téléchargement.jpg" alt="">
+        <h2>Mister John</h2>
+      </div>
+      <div class="nav">
+        <a href="../accueil.html">Deconnexion</a>
+        <div class="buttons">
+          <button onclick="window.location.href='profil.html'">Mon profil</button>
+          <button onclick="window.location.href='reservation.html'" class="active">Reservations</button>
+          <button onclick="window.location.href='guide.html'">Guides</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2>Mon profil</h2>
+      <hr>
+      <form class="profil-admin" id="profileForm">
+        <div class="photo">
+          <img src="../img/téléchargement.jpg" alt="Administrateur">
+        </div>
+        <div class="info">
+          <h3>John Doe</h3>
+          <ul>
+            <li><span>Email:</span> <input type="email" id="adminEmail" value="admin@example.com" disabled></li>
+            <li><span>Téléphone:</span> <input type="tel" id="adminPhone" value="05 55 55 55 55" disabled></li>
+            <li><span>Nationalité:</span> <input type="text" id="adminNatio" value="Ivoirienne" disabled></li>
+            <li><span>Code administrateur:</span> <input type="text" id="adminCode" value="XXXXXX" disabled></li>
+          </ul>
+          <button type="button" id="editButton">Modifier mon profil</button>
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+  <script>
+    const editButton = document.getElementById('editButton');
+const profileForm = document.getElementById('profileForm');
+
+editButton.addEventListener('click', () => {
+if(editButton.textContent=="Modifier mon profil"){
+    const confirmation = confirm('Êtes-vous sûr de vouloir modifier votre profil ?');
+
+  if (confirmation) {
+    // Enable input fields for editing
+    const inputs = profileForm.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+    inputs.forEach(input => input.disabled = false);
+    editButton.textContent="Enregistrer les modifications";
+  }
+}
+else{
+
+    const inputs = profileForm.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+    inputs.forEach(input => input.disabled = true);
+    editButton.textContent="Modifier mon profil";
+
+}
+  
+});
+
+  </script>
+</body>
+</html>

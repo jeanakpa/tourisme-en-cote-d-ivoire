@@ -1,0 +1,98 @@
+/* Overall reservation block styling */
+#historique {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid #ccc; /* Light gray border for subtle separation */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines if needed */
+    justify-content: space-between; /* Distribute items evenly in the container */
+    width: 100%;
+  }
+  
+  /* Container for individual reservation articles */
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    padding: 15px 0;
+  }
+  
+  /* Individual reservation article styling */
+  .article-historique {
+    display: flex;
+    background-color: #fff; /* White background for better readability */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 5px; /* Rounded corners for a more polished look */
+    padding: 15px;/* Adjust width as needed for multiple items per row */
+    max-width: 1000px; /* Set a maximum width to prevent excessive stretching */
+    margin: 0 auto; 
+    align-items: center;
+    position: relative;
+    gap: 8%;
+    width: 100%;/* Center each article within its container */
+  }
+  
+  /* Reservation article title (city name) */
+  .article-historique h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333; 
+    padding-left: 20px;/* Darker text for better contrast */
+  }
+  
+  /* Reservation article image */
+  .article-historique img {
+    width: 30%; /* Adjust width according to image aspect ratio */
+    border-radius: 5px; /* Maintain rounded corners */
+    object-fit: cover; /* Crop image to fit while maintaining aspect ratio */
+  }
+  
+  /* Reservation details section */
+  .specification {
+    display: flex; /* Allow details to display side-by-side if needed */
+    flex-wrap: wrap; /* Wrap details if text breaks onto multiple lines */
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+  
+  /* Specific details within the reservation */
+  .specification h3 {
+    font-size: 14px;
+    margin: 0 5px; /* Add some spacing between details */
+    color: #666;
+  }
+  
+  /* Reservation info section (price and status) */
+  .info-supples {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Right-align price and status */
+  }
+  
+  /* Reservation price */
+  .prices {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2e8b57; /* Greenish color for price */
+    margin-bottom: 5px;
+  }
+  
+  /* Reservation status */
+  .statut {
+    font-size: 14px;
+    color: #ffa700; /* Orange color for status (adjust as needed) */
+  }
+  
+  /* Reservation cancellation button */
+  .article-historique button {
+    background-color: #e74c3c; /* Red color for cancellation button */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicate interactivity on hover */
+  }
+  

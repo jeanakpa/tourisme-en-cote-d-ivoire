@@ -16,8 +16,9 @@
                 <li><a href="accueil.html">Accueil</a></li>
                 <li><a href="destination.html">Destinations</a></li>
                 <li><a href="#" class="active">Reservations</a></li>
+                <li><a href="historique.html">Historique</a></li>
                 <li><a href="accueil.html#services">Services</a></li>
-                <li><a href="#" class="login">Se connecter<i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="connexion.html" class="login">Se connecter<i class="fa-solid fa-chevron-down"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -25,37 +26,52 @@
     <main>
 
         <section>
-            <h1 id="titleArticle">Assinie</h1>
-            <div class="container">
-                <div class="main-images">
-                    <img id="imageArticle" src="img/téléchargement.jpg" alt="">
+            <form action="article.php" method="post">
+                <h1 id="titleArticle">Assinie</h1>
+                <div class="container">
+                    <div class="main-images">
+                        <img src="img/téléchargement.jpg" alt="">
+                    </div>
+                    <div class="info-supples">
+                        <!-- Ajout de champs cachés pour les données -->
+                        <input type="hidden" id="titreArticle" name="titreArticle" value="Assinie">
+                        <input type="hidden" id="imageArticle" name="imageArticle" value="img/téléchargement.jpg">
+                        <div class="info-supples">
+                            <div class="others-images">
+                                <img id="img1Article" src="img/téléchargement.jpg" alt="">
+                                <img id="img2Article" src="img/téléchargement.jpg" alt="">
+                                <img id="img3Article" src="img/téléchargement.jpg" alt="">
+                            </div>
+                            <p id="descriptionArticle">LorLorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt adipisci, quos minima distinctio, a rerum accusamus molestias velit enim ipsam ullam impedit commodi totam officiis possimus cumque iure eveniet cupiditate.</p>
+                            <div class="specification">
+                                <h3>Date: <span id="dateArticle"  name="dateArticle">15/05/2024</span></h3>
+                                <hr>
+                                <h3>Heure: <span id="heureArticle" name="heureArticle">15h</span></h3>
+                                <hr>
+                                <h3>Ville: <span id="villeArticle" name="villeArticle">Abidjan</span></h3></h3>
+                            </div>
+                            <div class="stars-box">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div class="price" id="priceArticle" name="prixArticle">XOF 15000</div>
+                            </div>
+                            <button>Continuer la reservation</button>
+                        </div>
+                        
+                        <div class="specification">
+                            <input type="hidden" id="dateArticle" name="dateArticle" value="15/05/2024">
+                            <input type="hidden" id="heureArticle" name="heureArticle" value="15h">
+                            <input type="hidden" id="villeArticle" name="villeArticle" value="Abidjan">
+                        </div>
+
+                    </div>
                 </div>
-                <div class="info-supples">
-                    <div class="others-images">
-                        <img id="img1Article" src="img/téléchargement.jpg" alt="">
-                        <img id="img2Article" src="img/téléchargement.jpg" alt="">
-                        <img id="img3Article" src="img/téléchargement.jpg" alt="">
-                    </div>
-                    <p id="descriptionArticle">LorLorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt adipisci, quos minima distinctio, a rerum accusamus molestias velit enim ipsam ullam impedit commodi totam officiis possimus cumque iure eveniet cupiditate.</p>
-                    <div class="specification">
-                        <h3>Date: <span id="dateArticle">15/05/2024</span></h3>
-                        <hr>
-                        <h3>Heure: <span id="heureArticle">15h</span></h3>
-                        <hr>
-                        <h3>Ville: <span id="villeArticle">Abidjan</span></h3></h3>
-                    </div>
-                    <div class="stars-box">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <div class="price" id="priceArticle">XOF 15000</div>
-                    </div>
-                    <button>Continuer la reservation</button>
-                </div>
-            </div>
+            </form>
         </section>
+
 
     </main>
 
@@ -63,6 +79,50 @@
         <p>&copy; 2024 Tourisme en Côte d'Ivoire</p>
     </footer>
 
+    <script>
+        // Fonction pour vérifier si l'utilisateur est connecté
+        function checkLoginStatus() {
+            const loginLink = document.querySelector('.login');
+            if (loginLink.textContent.trim() === "Se cconnecter") {
+                alert("Veuillez vous connecter pour continuer la réservation.");
+                event.preventDefault();
+            }
+        }
+    
+        // Attacher un événement click au bouton "Continuer la réservation"
+        document.addEventListener('DOMContentLoaded', function () {
+            const continueButton = document.querySelector('button');
+            continueButton.addEventListener('click', function () {
+                checkLoginStatus();
+            });
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title');
+            const description = params.get('description');
+            const price = params.get('price');
+            const image = params.get('image');
+            const img1 = params.get('img1');
+            const img2 = params.get('img2');
+            const img3 = params.get('img3');
+            const date = params.get('date');
+            const heure = params.get('heure');
+            const ville = params.get('ville');
+            document.getElementById('titleArticle').textContent = title;
+            document.getElementById('descriptionArticle').textContent = description;
+            document.getElementById('priceArticle').textContent = price;
+            document.getElementById('imageArticle').src = image;
+            document.getElementById('img1Article').src = img1;
+            document.getElementById('img2Article').src = img2;
+            document.getElementById('img3Article').src = img3;
+            document.getElementById('dateArticle').textContent = date;
+            document.getElementById('heureArticle').textContent = heure;
+            document.getElementById('villeArticle').textContent = ville;
+        });
+    </script>
     
 </body>
 </html>

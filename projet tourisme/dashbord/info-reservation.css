@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  section {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  /* Navigation Styles */
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #002855;
+    color: #ffffff;
+  }
+  
+  .profil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .profil {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav{
+    display: flex;
+    align-items: center;
+  }
+  .nav .buttons button {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav .buttons button:hover {
+    background-color: #003d7a;
+  }
+  
+  .nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px;
+  }
+  
+  /* Main Content Styles */
+  .main {
+    padding: 20px;
+  }
+  
+
+  .reservation-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-visiteur,
+  .info-reservation {
+    flex-basis: 45%;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .info-visiteur h3,
+  .info-reservation h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .info-visiteur ul,
+  .info-reservation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .info-visiteur li,
+  .info-reservation li {
+    margin-bottom: 5px;
+  }
+  
+  /* Buttons Container Styles */
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .buttons-container button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+span{
+    color: rgb(124, 124, 124);
+    font-weight: 500;
+    padding-left: 10px;
+}
+.message {
+    background-color: #99ff99;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+#reservationStatus{
+    color: orange;
+}
+  .buttons-container .confirme{
+    background-color: #00a329;
+  }
+  .buttons-container .confirme:hover{
+    background-color: #00b32d;
+  }
+  .buttons-container .annule{
+    background-color: #b30000;
+  }
+  .buttons-container .annule:hover{
+    background-color: #a30000;
+  }

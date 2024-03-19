@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  section {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  /* Navigation Styles */
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #002855;
+    color: #ffffff;
+  }
+  
+  .profil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .profil {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav{
+    display: flex;
+    align-items: center;
+  }
+  .nav .buttons button {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav .buttons button:hover {
+    background-color: #003d7a;
+  }
+  
+  .nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px;
+  }
+  
+  .guides{
+    display: flex;
+    align-items: center;
+  }
+  .ajouter-guide{
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  /* Main Content Styles */
+  .main {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  td {
+    text-align: center;
+    padding: 10px;
+  }
+  td:first-child{
+ 
+    font-weight: 500;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  td button{
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }

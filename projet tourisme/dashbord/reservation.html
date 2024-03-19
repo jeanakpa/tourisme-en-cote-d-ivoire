@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reservation.css">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <div class="header">
+      <h1>Dashbord administration</h1>
+    </div>
+
+    <div class="navigation">
+      <div class="profil">
+        <img src="../img/téléchargement.jpg" alt="">
+        <h2>Mister John</h2>
+      </div>
+      <div class="nav">
+        <a href="../accueil.html">Deconnexion</a>
+        <div class="buttons">
+          <button onclick="window.location.href='profil.html'">Mon profil</button>
+          <button onclick="window.location.href='reservation.html'">Reservations</button>
+          <button onclick="window.location.href='guide.html'">Guides</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2>Gestion des reservations</h2>
+      <hr>
+      <table>
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Site touristique</th>
+            <th>Nom visiteur</th>
+            <th>Date</th>
+            <th>Ville</th>
+            <th>Heure</th>
+            <th>Prix</th>
+            <th>Statut</th>
+            <th>Guide</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td onclick="getReservationDetails(this.parentElement)">1</td>
+            <td>Assinie</td>
+            <td>John Doe</td>
+            <td>15-07-2024</td>
+            <td>Abidjan</td>
+            <td>10h00</td>
+            <td>XOF 20000</td>
+            <td style="color: orange; font-weight: 500;">En cours</td>
+            <td>
+              <button onclick="getReservationDetails(this.parentElement.parentElement)">Attribuer un guide</button>
+            </td>
+          </tr>
+          </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    function getReservationDetails(tableRow) {
+      const reservationId = tableRow.firstChild.textContent;
+      const reservationSite = tableRow.children[1].textContent;
+      const reservationVisitor = tableRow.children[2].textContent;
+      const reservationDate = tableRow.children[3].textContent;
+      const reservationCity = tableRow.children[4].textContent;
+      const reservationTime = tableRow.children[5].textContent;
+      const reservationPrice = tableRow.children[6].textContent;
+      const reservationStatus = tableRow.children[7].textContent;
+
+      // Redirect to attribuer-guide.html with reservation details in the URL
+      window.location.href = `attribuer-guide.html?reservationId=${reservationId}&reservationSite=${reservationSite}&reservationVisitor=${reservationVisitor}&reservationDate=${reservationDate}&reservationCity=${reservationCity}&reservationTime=${reservationTime}&reservationPrice=${reservationPrice}&reservationStatus=${reservationStatus}`;
+    }
+  </script>
+</body>
+</html>

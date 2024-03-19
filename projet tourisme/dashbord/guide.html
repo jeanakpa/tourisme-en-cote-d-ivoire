@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="guide.css">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <div class="header">
+      <h1>Dashbord administration</h1>
+    </div>
+
+    <div class="navigation">
+      <div class="profil">
+        <img src="../img/téléchargement.jpg" alt="">
+        <h2>Mister John</h2>
+      </div>
+      <div class="nav">
+        <a href="../accueil.html">Deconnexion</a>
+        <div class="buttons">
+          <button onclick="window.location.href='profil.html'">Mon profil</button>
+          <button onclick="window.location.href='reservation.html'">Reservations</button>
+          <button onclick="window.location.href='guide.html'">Guides</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="guides">
+        <h2>Gestion des guides</h2>
+        <button class="ajouter-guide">Ajouter un guide</button>
+      </div>
+      
+      <hr>
+      <table>
+        <thead>
+          <tr>
+            <th>N°</th> 
+            <th>Statut</th> 
+            <th>Photo</th>
+            <th>Nom et prenoms</th>
+            <th>Numero de telephone</th>
+            <th>Email</th>
+            <th>Langues parlées</th>
+            <th>Region specialisée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="first-child">Deja attribué</td>
+            <td><img src="../img/téléchargement.jpg" alt="" style="height: 70px;"></td>
+            <td>John Doe</td>
+            <td>05 56 93 69 94</td>
+            <td>jeanakpa00@gmail.com</td>
+            <td>Anglais, francais, espagnol, arabe</td>
+            <td>Abidjan</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="first-child">Libre</td>
+            <td><img src="../img/téléchargement.jpg" alt="" style="height: 70px;"></td>
+            <td>John Doe</td>
+            <td>05 56 93 69 94</td>
+            <td>jeanakpa00@gmail.com</td>
+            <td>Anglais, francais, espagnol, arabe</td>
+            <td>Abidjan</td>
+          </tr>
+          </tbody>
+      </table>
+    </div>
+  </section>
+  <script>
+    const firstElements = document.querySelectorAll('.first-child');
+
+    firstElements.forEach(element => {
+      if (element.innerText === "Libre") {
+        element.style.color = "orange";
+      }
+      else{
+        element.style.color = "#007bff";
+      }
+    });
+  </script>
+</body>
+</html>

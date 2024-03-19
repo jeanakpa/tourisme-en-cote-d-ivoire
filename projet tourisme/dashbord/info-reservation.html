@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="info-reservation.css">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <div class="header">
+      <h1>Dashbord administration</h1>
+    </div>
+
+    <div class="navigation">
+      <div class="profil">
+        <img src="../img/téléchargement.jpg" alt="">
+        <h2>Mister John</h2>
+      </div>
+      <div class="nav">
+        <a href="../accueil.html">Deconnexion</a>
+        <div class="buttons">
+          <button onclick="window.location.href='profil.html'">Mon profil</button>
+          <button onclick="window.location.href='reservation.html'" class="active">Reservations</button>
+          <button onclick="window.location.href='guide.html'">Guides</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2>Gestion des reservations</h2>
+      <hr>
+      <div class="reservation-details">
+        <div class="info-visiteur">
+          <h3>Informations visiteur</h3>
+          <ul>
+            <li>Nom et prénom: <span id="visitorName">Mister john</span></li>
+            <li>Nationalité: <span id="visitorNationality">Ivoirienne</span></li>
+            <li>Langue nationale: <span id="visitorNativeLanguage">Francais</span></li>
+            <li>Langue supplémentaire: <span id="visitorSecondaryLanguage">Anglais, espagnol</span></li>
+            <li>Téléphone: <span id="visitorPhone">05 56 93 69 94</span></li>
+            <li>Email: <span id="visitorEmail">jeanakpa00@gmail.com</span></li>
+          </ul>
+        </div>
+        <hr>
+        <div class="info-reservation">
+          <h3>Informations réservation</h3>
+          <ul>
+            <li>Titre: <span id="reservationTitle">Assinie</span></li>
+            <li>Ville: <span id="reservationCity">Bouake</span></li>
+            <li>Date: <span id="reservationDate">15-07-2024</span></li>
+            <li>Heure: <span id="reservationTime">15h00</span></li>
+            <li>Prix: <span id="reservationPrice">XOF 15000</span></li>
+            <li>Statut: <span id="reservationStatus">en cours</span></li>
+            <li>Guide: <span id="reservationGuide">Joe dan</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="annule">Annuler la réservation</button>
+        <button class="confirme guide" data-guide-id>Confirmer la reservation</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const confirmButton = document.querySelector('.confirme');
+    const cancelButton = document.querySelector('.annule');
+    const reservationDetails = document.querySelector('.reservation-details');
+    const buttonsContainer = document.querySelector('.buttons-container');
+    
+    function confirmReservation() {
+      if (document.getElementById('reservationGuide').querySelector('.bouton-guide')) {
+        alert('Veuillez ajouter un guide avant de confirmer la réservation.');
+      } else {
+        const confirmed = confirm('Voulez-vous confirmer la réservation ?');
+        if (confirmed) {
+          const message = 'Réservation terminée';
+          reservationDetails.querySelector('#reservationStatus').textContent = 'Terminée';
+          reservationDetails.querySelector('#reservationStatus').style.color = 'green';
+          buttonsContainer.remove();
+        }
+      }
+    }
+    
+    function cancelReservation() {
+      const confirmed = confirm('Voulez-vous annuler la réservation ?');
+      if(confirmed){
+        const message = 'Réservation annulée';
+      reservationDetails.querySelector('#reservationStatus').textContent = 'Annulée';
+      reservationDetails.querySelector('#reservationStatus').style.color = 'red';
+      buttonsContainer.remove();
+      }
+    }
+    
+    confirmButton.addEventListener('click', confirmReservation);
+    cancelButton.addEventListener('click', cancelReservation);
+    
+    function displayMessage(message) {
+      const messageElement = document.createElement('p');
+      messageElement.classList.add('message');
+      messageElement.textContent = message;
+      buttonsContainer.appendChild(messageElement);
+      setTimeout(() => {
+        messageElement.remove();
+      }, 3000);
+    }
+    </script>
+    
+</body>
+</html>
