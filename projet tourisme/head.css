@@ -5,6 +5,9 @@ body {
     background-color: #f0f0f0cc;
 }
 
+header i{
+    margin-right: 10px;
+}
 header {
     background-color: #e68d07de;
     color: #fff;
@@ -24,13 +27,16 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 20px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 nav ul li a:hover{
-    color: #1E90FF;
-    border-bottom: 1px solid #1E90FF;
+    background-color: #FFA500;
+    color: #fff;
 }
 
 main {
@@ -86,21 +92,19 @@ footer p {
 
 
 .login{
-    background-color: #1E90FF;
-    border: 2px #1E90FF solid;
+    background-color: #FFA500;
+    border: 2px #FFA500 solid;
     padding: 5px 10px;
     border: none;
-}
-.login:hover{
-    background-color: #e68d07de;
+    font-weight: 500;
     color: #fff;
-    border: 1px #fff solid;
 }
+
 .login i{
     padding-left: 5px;
 }
 
 .active{
-    color: #1E90FF;
-    border-bottom: 1px solid #1E90FF;
+    color: #0056b3;
+    font-weight: 500;
 }

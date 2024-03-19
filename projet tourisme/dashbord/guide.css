@@ -120,3 +120,7 @@ body {
     border: none;
     cursor: pointer;
   }
+
+  .nav i{
+    margin-right: 10px;
+}

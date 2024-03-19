@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="attribuer-guide.css">
-  <title>Attribuer un guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Ivoire Tourisme</title>
 </head>
 <body>
   <section>
@@ -13,19 +14,19 @@
     </div>
 
     <div class="navigation">
-      <div class="profil">
-        <img src="../img/téléchargement.jpg" alt="">
-        <h2>Mister John</h2>
-      </div>
-      <div class="nav">
-        <a href="../accueil.html">Deconnexion</a>
-        <div class="buttons">
-          <button onclick="window.location.href='profil.html'">Mon profil</button>
-          <button onclick="window.location.href='reservation.html'">Reservations</button>
-          <button onclick="window.location.href='guide.html'">Guides</button>
+        <div class="profil">
+          <img src="https://img.freepik.com/free-photo/portrait-young-handsome-african-man-blue-wall_176420-2339.jpg?t=st=1710862915~exp=1710866515~hmac=4ddbf805d45fa3f5b8660cabe05e687912d62fa070592d1dc0d4ae9736ddf089&w=740" alt="">
+          <h2>Mister John</h2>
+        </div>
+        <div class="nav">
+          <a href="../accueil.html"><i class="fa-solid fa-right-to-bracket"></i>Deconnexion</a>
+          <div class="buttons">
+            <button onclick="window.location.href='profil.html'"><i class="fa-solid fa-user"></i>Mon profil</button>
+            <button onclick="window.location.href='reservation.html'"><i class="fa-solid fa-bookmark"></i>Reservations</button>
+            <button onclick="window.location.href='guide.html'"><i class="fa-solid fa-users"></i>Guides</button>
+          </div>
         </div>
       </div>
-    </div>
 
     <div class="main attribution-block">
       <h2>Attribuer un guide</h2>
@@ -41,14 +42,18 @@
         <li>Heure: <span id="reservationTime"></span></li>
         <li>Prix: <span id="reservationPrice"></span></li>
         <li>Statut: <span id="reservationStatus"></span></li>
+
       </ul>
 
       <h3>Choix du guide</h3>
-      <form id="assignGuideForm" method="post" action="assign-guide.php">  <select id="guidesList" name="selectedGuideId">
+      <form id="assignGuideForm" method="post" action="">
+        <select id="guidesList" name="selectedGuideId">
         </select>
-        <button type="submit">Attribuer ce guide</button>
+        <button type="submit" id="submitButton">Attribuer ce guide</button>
       </form>
-
+      <ul>
+      <li>Guide attribué : <span id="assignedGuide"></span></li>
+    </ul>
       <script>
         // Access reservation details from the URL
         const urlParams = new URLSearchParams(window.location.search);
@@ -89,7 +94,28 @@
           option.textContent = guide.name;
           guidesList.appendChild(option);
         });
+
+        
       </script>
+      <script>
+        document.getElementById('assignGuideForm').addEventListener('submit', function(event) {
+          // Empêcher le comportement par défaut du formulaire
+          event.preventDefault();
+      
+          // Récupérer le guide sélectionné
+          const selectedGuide = document.getElementById('guidesList').value;
+      
+          // Demander confirmation à l'utilisateur
+          const confirmed = confirm(`Voulez-vous attribuer le guide "${document.getElementById('guidesList').selectedOptions[0].textContent}" à cette réservation ?`);
+      
+          // Si l'utilisateur confirme, masquer le bouton et afficher le champ du guide
+          if (confirmed) {
+            document.getElementById('assignGuideForm').style.display = 'none';
+            document.getElementById('assignedGuide').textContent = document.getElementById('guidesList').selectedOptions[0].textContent;
+          }
+        });
+      </script>
+      
     </div>
   </section>
 </body>

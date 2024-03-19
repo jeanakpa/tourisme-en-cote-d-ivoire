@@ -119,15 +119,17 @@
     text-align: center;
     color: #fff;
 }
-.box-services img{
+.box-services i{
     position: relative;
     width: 30%;
+    font-size: 100px;
     margin-left: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: auto;
     padding: 20px 0;
+    color: #fff;
 }
 
 .box-services p{

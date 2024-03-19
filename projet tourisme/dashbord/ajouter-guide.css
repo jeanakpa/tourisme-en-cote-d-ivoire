@@ -68,91 +68,81 @@ body {
     padding: 20px;
   }
   
+  .guides{
+    display: flex;
+    align-items: center;
+  }
+  .ajouter-guide{
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   /* Main Content Styles */
   .main {
     padding: 20px;
   }
-  
+  .nav i{
+    margin-right: 10px;
+}
 
-  .reservation-details {
+  /* Form styles */
+  #addGuideForm {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
   }
   
-  .info-visiteur,
-  .info-reservation {
-    flex-basis: 45%;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+  .plus{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap: 5%;
+  }
+  .form-group {
+    width: 100%;
+    margin-bottom: 15px;
   }
   
-  .info-visiteur h3,
-  .info-reservation h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-  }
-  
-  .info-visiteur ul,
-  .info-reservation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .info-visiteur li,
-  .info-reservation li {
+  .form-group label {
+    display: block;
     margin-bottom: 5px;
+    font-weight: bold;
   }
   
-  /* Buttons Container Styles */
-  .buttons-container {
-    display: flex;
-    justify-content: flex-end;
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
   }
   
-  .buttons-container button {
+  .form-group select {
+    height: 35px;
+  }
+  
+  .form-group input[type="file"] {
+    padding: 5px;
+  }
+  
+  button[type="submit"] {
     background-color: #0056b3;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 10px;
+    border-radius: 3px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-span{
-    color: rgb(124, 124, 124);
-    font-weight: 500;
-    padding-left: 10px;
-}
-.message {
-    background-color: #99ff99;
-    padding: 10px;
-    border-radius: 5px;
     margin-top: 10px;
+    width: 100%;
   }
   
-#reservationStatus{
-    color: orange;
-}
-  .buttons-container .confirme{
-    background-color: #00a329;
+  button[type="submit"]:hover {
+    opacity: 0.8;
   }
-  .buttons-container .confirme:hover{
-    background-color: #00b32d;
-  }
-  .buttons-container .annule{
-    background-color: #b30000;
-  }
-  .buttons-container .annule:hover{
-    background-color: #a30000;
-  }
-
-  .nav i{
-    margin-right: 10px;
-}
+  
